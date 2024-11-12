@@ -1,179 +1,72 @@
-@import url("reset.css");
-/* This is a custom font from google fonts */
-@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Amatic+SC:wght@400;700&display=swap");
 
-/* what is :root? https://developer.mozilla.org/en-US/docs/Web/CSS/:root */
 :root {
-  /* Define design variables */
-  --color-primary: #d5d5d5;
+  --color-primary: #e6e6e6;
   --color-secondary: #ffffff;
-  --color-background: #010101;
-  --color-accent: #53cff1b3;
-
+  --color-background: #222831;
+  --color-accent: #53cff1;
   --border-radius: 0.5rem;
-
   --font-titles: "Frank Ruhl Libre", serif;
-  --font-body: system-ui, sans-serif; /* system-ui matches the user's system font */
+  --font-body: "Amatic SC", sans-serif;
 }
 
 body {
   color: var(--color-primary);
   background-color: var(--color-background);
   font-family: var(--font-body);
-}
-
-/* Layout */
-main {
-  padding: 2rem;
+  text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 header {
   padding: 1rem;
-}
-
-main,
-header,
-nav {
-  max-width: 60rem;
-  margin: 0 auto;
-}
-
-article,
-nav {
-  padding: 1rem 0;
-}
-
-.rtl {
-  direction: rtl;
-}
-
-/* Text */
-p {
-  margin: 1rem 0;
-}
-
-ul,
-ol {
-  margin-top: 0.5rem;
-}
-
-li {
-  margin-top: 0.3rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 1rem;
-  font-family: var(--font-titles);
-  font-weight: 500;
-  font-optical-sizing: auto;
+  background-color: var(--color-accent);
 }
 
 h1 {
-  font-size: 2.5em;
+  font-family: var(--font-titles);
+  font-size: 2.5rem;
+  color: var(--color-secondary);
 }
 
-h2 {
-  font-size: 2em;
+p {
+  font-size: 1.5rem;
+}
+.main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-h3 {
-  font-size: 1.5em;
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
-h4 {
-  font-size: 1.2em;
-}
-
-h5 {
-  font-size: 1em;
-}
-
-h6 {
-  font-size: 0.83em;
-}
-
-blockquote {
-  padding-left: 1rem;
-  border-left: 2px solid var(--color-secondary);
-}
-
-/* Links */
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-}
-a:hover {
-  filter: brightness(150%);
-}
-
-/* Tables */
-table {
-  margin-top: 1.5rem;
-  border-spacing: 0px;
-  border-collapse: collapse;
-}
-table td,
-table th {
-  padding: 0.5rem;
-  border: 1px solid var(--color-secondary);
-}
-
-/* Forms */
-input,
-button,
-textarea,
-select {
-  padding: 0.2em 0.5em;
-  border: 1px solid var(--color-secondary);
-  border-radius: var(--border-radius);
-}
-
-fieldset {
-  margin-top: 1.5rem;
-  border: 1px solid var(--color-secondary);
-}
-
-.counter-button {
+.btn {
   background-color: var(--color-accent);
-  width: 2rem;
-  height: 2rem;
   color: white;
   border: none;
-  border-radius: 1000px; /* Make the button round */
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
-  font-weight: bold;
-
-  &:hover {
-    filter: brightness(120%);
-  }
-
-  &:active {
-    filter: brightness(80%);
-  }
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease;
 }
 
-.cool-toolbar{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+.btn:hover {
+  background-color: #3da5b0;
 }
-.overlay {
+
+.hidden-message {
   display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 1.3rem;
+  color: var(--color-accent);
+  margin-top: 1rem;
 }
 
 .overlay {
@@ -184,7 +77,6 @@ fieldset {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -192,13 +84,51 @@ fieldset {
 .popup-image {
   max-width: 90%;
   max-height: 80%;
+  border-radius: var(--border-radius);
 }
 
-/* Close button for the popup */
 .close-button {
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 30px;
+  font-size: 2rem;
   color: white;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
+}
+
+footer a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+.coming-soon-main {
+  text-align: center;
+  padding: 2rem;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.countdown p {
+  background-color: var(--color-accent);
+  color: white;
+  padding: 0.8rem;
+  border-radius: var(--border-radius);
+  font-size: 1.5rem;
+  font-weight: bold;
 }

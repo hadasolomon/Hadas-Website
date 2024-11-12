@@ -1,24 +1,44 @@
 console.log("Hello World!");
-function removeSomeButtons() {
-  // Select all elements with the 'toRemove' class
-  const elements = document.querySelectorAll(".toRemove");
+startCountdown();
 
-  // Loop through each element and remove it from the DOM
-  elements.forEach(element => {
-    element.remove();
-  });
+function removeSomeButtons() {
+  document.querySelectorAll(".btn").forEach(button => button.remove());
 }
+
 function openPopup() {
   document.getElementById("popup").style.display = "flex";
-  
 }
 
-// Function to close the popup
 function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
 
-// Event listeners for popup actions
-document.querySelector("#openPopupButton").addEventListener("click", openPopup);
-document.querySelector("#closePopupButton").addEventListener("click", closePopup);
-document.querySelector("#remover").addEventListener("click", removeSomeButtons);
+document.getElementById("openPopupButton").addEventListener("click", openPopup);
+document.getElementById("closePopupButton").addEventListener("click", closePopup);
+document.getElementById("remover").addEventListener("click", removeSomeButtons);
+
+function startCountdown() {
+  const endDate = new Date("February 2, 2025 23:59:59").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = endDate - now;
+
+    if (distance > 0) {
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days.toString().padStart(2, "0");
+      document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+      document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+      document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+    } else {
+      document.getElementById("countdown").innerHTML = "<p>We're Live!</p>";
+      clearInterval(countdownInterval);
+    }
+  }
+
+  const countdownInterval = setInterval(updateCountdown, 1000);
+}

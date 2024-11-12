@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coming Soon</title>
-    <link href="/styles/main.css" rel="stylesheet" />
-  </head>
-  <body>
-    <header role="banner">
-      <h1>Coming Soon!</h1>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon</title>
+  <link href="/styles/main.css" rel="stylesheet">
+</head>
+<body>
+  <header role="banner">
+    <h1>Coming Soon...</h1>
+  </header>
 
-    <script type="module" src="/main.js"></script>
-  </body>
+  <main class="coming-soon-main">
+    <p>We're crafting something spectacular. Get ready!</p>
+    <div id="countdown" class="countdown">
+      <div class="countdown-item">
+        <span id="days">00</span>
+        <span>Days</span>
+      </div>
+      <div class="countdown-item">
+        <span id="hours">00</span>
+        <span>Hours</span>
+      </div>
+      <div class="countdown-item">
+        <span id="minutes">00</span>
+        <span>Minutes</span>
+      </div>
+      <div class="countdown-item">
+        <span id="seconds">00</span>
+        <span>Seconds</span>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Hadas Solomon</p>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
 </html>

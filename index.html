@@ -1,46 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Website</title>
-    <link href="/styles/main.css" rel="stylesheet" />
-  </head>
-  <body>
-    <header role="banner">
-      <h1>Welcome to my Website!</h1>
-    </header>
-    <main>
-      <section>
-        <p>Choose a button to see a trick:</p>
-        <div class="cool-toolbar">
-          <button class="toRemove" onclick="alert('Button clicked!')">Alert</button>
-          <button onclick="document.getElementById('hiddenMessage').style.display = 'block'">Reveal Message</button>
-          <button id="openPopupButton">Show Image</button>
-          <button id="remover">Remove Buttons</button>
-          <button class="toRemove" onclick="window.location.href='NewPage.html'">Go to New Page</button>
-        </div>
-      </section>
-      
-      <section>
-        <p id="hiddenMessage" style="display: none;">🎉 Surprise! You found the hidden message!</p>
-        <br>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elegant Website</title>
+  <link href="styles/main.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Website</h1>
+  </header>
 
-    <!-- The popup overlay with image -->
-      <div class="overlay" id="popup">
-          <span class="close-button" id="closePopupButton">&times;</span>
-          <img src="image.png" alt="Popup Image" class="popup-image">
+  <main>
+    <section class="interactive-section">
+      <p>Choose a button to see a trick:</p>
+      <div class="button-group">
+        <button class="btn" onclick="alert('Button clicked!')">Alert</button>
+        <button class="btn" onclick="document.getElementById('hiddenMessage').style.display = 'block'">Reveal Message</button>
+        <button class="btn" id="openPopupButton">Show Image</button>
+        <button class="btn" id="remover">Remove Buttons</button>
+        <button class="btn" onclick="window.location.href='NewPage.html'">Go to New Page</button>
       </div>
-      </section>
-      
-    <footer>
-      <a href="NewPage.html">Coming Soon</a>
-      <p>&copy; 2025 Hadas Solomon</p>
-    </footer>
+      <p id="hiddenMessage" class="hidden-message">🎉 Surprise! You found the hidden message!</p>
+    </section>
 
-    </main>
+    <section>
+      <div class="overlay" id="popup">
+        <span class="close-button" id="closePopupButton">&times;</span>
+        <img src="image.png" alt="Popup Image" class="popup-image">
+      </div>
+    </section>
+  </main>
 
-    <script type="module" src="/main.js"></script>
-  </body>
+  <footer>
+    <a href="https://new.huji.ac.il/">The Hebrew University Of Jerusalem</a>
+    <p>&copy; 2025 Hadas Solomon</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
 </html>
