@@ -1,19 +1,24 @@
 console.log("Hello World!");
-setupCounter();
+function removeSomeButtons() {
+  // Select all elements with the 'toRemove' class
+  const elements = document.querySelectorAll(".toRemove");
 
-function setupCounter() {
-  let count = 0;
-
-  function increment() {
-    count++;
-    document.querySelector("#count").innerHTML = count;
-  }
-
-  function decrement() {
-    count--;
-    document.querySelector("#count").innerHTML = count;
-  }
-
-  document.querySelector("#increment").addEventListener("click", increment);
-  document.querySelector("#decrement").addEventListener("click", decrement);
+  // Loop through each element and remove it from the DOM
+  elements.forEach(element => {
+    element.remove();
+  });
 }
+function openPopup() {
+  document.getElementById("popup").style.display = "flex";
+  
+}
+
+// Function to close the popup
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
+// Event listeners for popup actions
+document.querySelector("#openPopupButton").addEventListener("click", openPopup);
+document.querySelector("#closePopupButton").addEventListener("click", closePopup);
+document.querySelector("#remover").addEventListener("click", removeSomeButtons);

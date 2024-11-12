@@ -157,3 +157,48 @@ fieldset {
     filter: brightness(80%);
   }
 }
+
+.cool-toolbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-image {
+  max-width: 90%;
+  max-height: 80%;
+}
+
+/* Close button for the popup */
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+}

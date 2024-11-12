@@ -12,14 +12,33 @@
       <h1>Welcome to my Website!</h1>
     </header>
     <main>
-      <a href="/elements.html">Elements Page</a>
-      <a href="/NewPage.html">New Page</a>
-      <div class="counter">
-        <h2>Counter</h2>
-        <button id="increment" class="counter-button">+</button>
-        <button id="decrement" class="counter-button">−</button>
-        <span id="count">0</span>
+      <section>
+        <p>Choose a button to see a trick:</p>
+        <div class="cool-toolbar">
+          <button class="toRemove" onclick="alert('Button clicked!')">Alert</button>
+          <button onclick="document.getElementById('hiddenMessage').style.display = 'block'">Reveal Message</button>
+          <button id="openPopupButton">Show Image</button>
+          <button id="remover">Remove Buttons</button>
+          <button class="toRemove" onclick="window.location.href='NewPage.html'">Go to New Page</button>
+        </div>
+      </section>
+      
+      <section>
+        <p id="hiddenMessage" style="display: none;">🎉 Surprise! You found the hidden message!</p>
+        <br>
+
+    <!-- The popup overlay with image -->
+      <div class="overlay" id="popup">
+          <span class="close-button" id="closePopupButton">&times;</span>
+          <img src="image.png" alt="Popup Image" class="popup-image">
       </div>
+      </section>
+      
+    <footer>
+      <a href="NewPage.html">Coming Soon</a>
+      <p>&copy; 2025 Hadas Solomon</p>
+    </footer>
+
     </main>
 
     <script type="module" src="/main.js"></script>
